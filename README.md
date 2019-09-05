@@ -1,1 +1,2 @@
-# vhdl-new
+# vhdl
+Projetos Digitais e Microprocessadores
