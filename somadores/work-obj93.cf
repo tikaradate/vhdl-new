@@ -1,0 +1,38 @@
+v 4
+file . "tb_somador.vhd" "4d296919f3d0c33c549ece87d7f8f5208e0962b7" "20190912174151.027":
+  entity tb_somador at 8( 446) + 0 on 41;
+  architecture tb of tb_somador at 15( 550) + 0 on 42;
+  configuration cfg_tb at 188( 6977) + 0 on 43;
+file . "aux.vhd" "e341bb9368f6a4a7bafde8c33f1a176000962609" "20190912174150.812":
+  entity inv at 22( 952) + 0 on 13;
+  architecture comport of inv at 30( 1116) + 0 on 14;
+  entity and2 at 41( 1484) + 0 on 15;
+  architecture comport of and2 at 49( 1655) + 0 on 16;
+  entity and3 at 59( 2023) + 0 on 17;
+  architecture comport of and3 at 67( 2198) + 0 on 18;
+  entity or2 at 79( 2573) + 0 on 19;
+  architecture comport of or2 at 87( 2741) + 0 on 20;
+  entity or3 at 96( 3105) + 0 on 21;
+  architecture comport of or3 at 104( 3277) + 0 on 22;
+  entity xor2 at 116( 3650) + 0 on 23;
+  architecture comport of xor2 at 124( 3821) + 0 on 24;
+  entity xor3 at 133( 4188) + 0 on 25;
+  architecture comport of xor3 at 141( 4363) + 0 on 26;
+file . "packageWires.vhd" "787df55833369c3356d0a0ae4bcc9d8afdc0d386" "20190912174150.769":
+  package p_wires at 5( 229) + 0 on 11 body;
+  package body p_wires at 48( 1990) + 0 on 12;
+file . "somador.vhd" "a3aff2dec9573b610dec5ffa8d00dedef9eb4126" "20190912174150.855":
+  entity addbit at 9( 421) + 0 on 27;
+  architecture estrutural of addbit at 16( 630) + 0 on 28;
+  entity addercadeia at 47( 1714) + 0 on 29;
+  architecture addercadeia of addercadeia at 57( 1929) + 0 on 30;
+  entity adianta4 at 97( 3691) + 0 on 31;
+  architecture adianta4 of adianta4 at 106( 3939) + 0 on 32;
+  entity adderadianta4 at 145( 5570) + 0 on 33;
+  architecture adderadianta4 of adderadianta4 at 155( 5789) + 0 on 34;
+  entity adianta16 at 217( 8126) + 0 on 35;
+  architecture adianta16 of adianta16 at 226( 8392) + 0 on 36;
+  entity adderadianta16 at 274( 10332) + 0 on 37;
+  architecture adderadianta16 of adderadianta16 at 285( 10667) + 0 on 38;
+  entity addercsa32 at 352( 13161) + 0 on 39;
+  architecture functional of addercsa32 at 401( 14659) + 0 on 40;
