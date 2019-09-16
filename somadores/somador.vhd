@@ -418,7 +418,7 @@ end architecture functional;
                             vai  : out bit);
     end component adderAdianta16;
 
-	signal m, u, v : reg17;
+	signal m, u, v : reg16;
 	signal vai1, vai2, vai3 : bit;
 begin
 
@@ -435,7 +435,7 @@ begin
 	      	v(0) when vai1 = "1"
 	with vai1 select
 	m(1) <= u(1) when vai1 = "0",
-          v(1) when vai1 = "1"
+          	v(1) when vai1 = "1"
 	with vai1 select
 	m(2) <= u(2) when vai1 = "0",
 	      	v(2) when vai1 = "1"
@@ -462,28 +462,32 @@ begin
 	      	v(9) when vai1 = "1"
 	with vai1 select
 	m(10) <= u(10) when vai1 = "0",
-           v(10) when vai1 = "1"
+           	 v(10) when vai1 = "1"
 	with vai1 select
 	m(11) <= u(11) when vai1 = "0",
-           v(11) when vai1 = "1"
+          	 v(11) when vai1 = "1"
 	with vai1 select
 	m(12) <= u(12) when vai1 = "0",
-           v(12) when vai1 = "1"
+           	 v(12) when vai1 = "1"
 	with vai1 select
 	m(13) <= u(13) when vai1 = "0",
-           v(13) when vai1 = "1"
+           	 v(13) when vai1 = "1"
 	with vai1 select
 	m(14) <= u(14) when vai1 = "0",
-           v(14) when vai1 = "1"
+           	 v(14) when vai1 = "1"
 	with vai1 select
 	m(15) <= u(15) when vai1 = "0",
-           v(15) when vai1 = "1"
-	with vai1 select	
-	m(16) <= vai2 when vai1 = "0",
-	         vai3 when vai1 = "1"
+           	 v(15) when vai1 = "1"
+--	with vai1 select	
+--	m(16) <= vai2 when vai1 = "0",
+--	         vai3 when vai1 = "1"
+
+-- saidas
 
 	outC(31 downto 16) <= m(15 downto 0);
-	vai <= m(16);
+	with vai1 select
+	vai <= vai2 when vai1 = "0",
+      	       vai3 when vai1 = "1",
 -- end architecture structural;
   
 ------------------------------------------------------------------------------
