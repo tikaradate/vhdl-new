@@ -392,102 +392,105 @@ end adderCSA32;
 -- ======================================================================
 -- especificação funcional para um somador de 32 bits; não computa vai-um
 -- ======================================================================
-architecture functional of adderCSA32 is 
-  signal aint,bint,cint : integer;
-begin
+--architecture functional of adderCSA32 is 
+--  signal aint,bint,cint : integer;
+--begin
 
-  aint <= BV2INT(inpA);
-  bint <= BV2INT(inpB);  
+--  aint <= BV2INT(inpA);
+--  bint <= BV2INT(inpB);  
 
-  cint <= aint + bint;
+--  cint <= aint + bint;
 
-  outC <= INT2BV32(cint);
+--  outC <= INT2BV32(cint);
   
-  vai <= '0';
+--  vai <= '0';
   
-end architecture functional;
+--end architecture functional;
   
   
 -- ======================================================================
 -- escreva aqui seu modelo para o somador de 32 bits que computa vai-um
 -- ======================================================================
-  architecture structural of CSA32 is
-    component adderAdianta16 is port(inpA, inpB : in bit_vector;
+ architecture structural of adderCSA32 is
+    component adderAdianta16 port
+			   (inpA, inpB : in bit_vector;
                             outC : out bit_vector;
                             vem  : in bit;
                             vai  : out bit);
     end component adderAdianta16;
 
 	signal m, u, v : reg16;
-	signal vai1, vai2, vai3 : bit;
+	signal vai1, vai2, vai3, bit0, bit1 : bit;
 begin
 
 -- SEU MODELO VAI AQUI
-	
-  UaA161: adderAdianta16 port map ( inpA(15 downto 0), inpB(15 downto 0), outC(15 downto 0), vem, vai1 );
+	bit0 <= '0';
+	bit1 <= '1';	
 
-	UaA162: adderAdianta16 port map ( inpA(31 downto 16), inpB(31 downto 16), u(15 downto 0), "0", vai2 );
+  	UaA161: adderAdianta16 port map ( inpA(15 downto 0), inpB(15 downto 0), outC(15 downto 0), bit0, vai1 );
 
-	UaA163: adderAdianta16 port map ( inpA(31 downto 16), inpB(31 downto 16), v(15 downto 0), "1", vai3 );
+	UaA162: adderAdianta16 port map ( inpA(31 downto 16), inpB(31 downto 16), u(15 downto 0), bit0, vai2 );
+
+	UaA163: adderAdianta16 port map ( inpA(31 downto 16), inpB(31 downto 16), v(15 downto 0), bit1, vai3 );
 	
-	with vai1 select
-	m(0) <= u(0) when vai1 = "0",
-	      	v(0) when vai1 = "1"
-	with vai1 select
-	m(1) <= u(1) when vai1 = "0",
-          	v(1) when vai1 = "1"
-	with vai1 select
-	m(2) <= u(2) when vai1 = "0",
-	      	v(2) when vai1 = "1"
-	with vai1 select
-	m(3) <= u(3) when vai1 = "0",
-      		v(3) when vai1 = "1"
-	with vai1 select
-	m(4) <= u(4) when vai1 = "0",
-	      	v(4) when vai1 = "1"
-	with vai1 select
-	m(5) <= u(5) when vai1 = "0",
-	      	v(5) when vai1 = "1"
-	with vai1 select
-	m(6) <= u(6) when vai1 = "0",
-	      	v(6) when vai1 = "1"
-	with vai1 select
-	m(7) <= u(7) when vai1 = "0",
-	      	v(7) when vai1 = "1"
-	with vai1 select
-	m(8) <= u(8) when vai1 = "0",
-	      	v(8) when vai1 = "1"
-	with vai1 select
-	m(9) <= u(9) when vai1 = "0",
-	      	v(9) when vai1 = "1"
-	with vai1 select
-	m(10) <= u(10) when vai1 = "0",
-           	 v(10) when vai1 = "1"
-	with vai1 select
-	m(11) <= u(11) when vai1 = "0",
-          	 v(11) when vai1 = "1"
-	with vai1 select
-	m(12) <= u(12) when vai1 = "0",
-           	 v(12) when vai1 = "1"
-	with vai1 select
-	m(13) <= u(13) when vai1 = "0",
-           	 v(13) when vai1 = "1"
-	with vai1 select
-	m(14) <= u(14) when vai1 = "0",
-           	 v(14) when vai1 = "1"
-	with vai1 select
-	m(15) <= u(15) when vai1 = "0",
-           	 v(15) when vai1 = "1"
+--	with vai1 select
+	m(0) <= u(0) when vai1 = bit0 else
+	      	v(0) when vai1 = bit1;
+--	with vai1 select
+	m(1) <= u(1) when vai1 = bit0 else
+          	v(1) when vai1 = bit1;
+--	with vai1 select
+	m(2) <= u(2) when vai1 = bit0 else
+	      	v(2) when vai1 = bit1;
+--	with vai1 select
+	m(3) <= u(3) when vai1 = bit0 else
+      		v(3) when vai1 = bit1;
+--	with vai1 select
+	m(4) <= u(4) when vai1 = bit0 else
+	      	v(4) when vai1 = bit1;
+--	with vai1 select
+	m(5) <= u(5) when vai1 = bit0 else
+	      	v(5) when vai1 = bit1;
+--	with vai1 select
+	m(6) <= u(6) when vai1 = bit0 else
+	      	v(6) when vai1 = bit1;
+--	with vai1 select
+	m(7) <= u(7) when vai1 = bit0 else
+	      	v(7) when vai1 = bit1;
+--	with vai1 select
+	m(8) <= u(8) when vai1 = bit0 else
+	      	v(8) when vai1 = bit1;
+--	with vai1 select
+	m(9) <= u(9) when vai1 = bit0 else
+	      	v(9) when vai1 = bit1;
+--	with vai1 select
+	m(10) <= u(10) when vai1 = bit0 else
+           	 v(10) when vai1 = bit1;
+--	with vai1 select
+	m(11) <= u(11) when vai1 = bit0 else
+          	 v(11) when vai1 = bit1;
+--	with vai1 select
+	m(12) <= u(12) when vai1 = bit0 else
+           	 v(12) when vai1 = bit1;
+--	with vai1 select
+	m(13) <= u(13) when vai1 = bit0 else
+           	 v(13) when vai1 = bit1;
+--	with vai1 select
+	m(14) <= u(14) when vai1 = bit0 else
+           	 v(14) when vai1 = bit1;
+--	with vai1 select
+	m(15) <= u(15) when vai1 = bit0 else
+           	 v(15) when vai1 = bit1;
 --	with vai1 select	
 --	m(16) <= vai2 when vai1 = "0",
---	         vai3 when vai1 = "1"
+--	         vai3 when vai1 = "1";
 
 -- saidas
 
 	outC(31 downto 16) <= m(15 downto 0);
-	with vai1 select
-	vai <= vai2 when vai1 = "0",
-      	       vai3 when vai1 = "1",
--- end architecture structural;
-  
+--	with vai1 select
+	vai <= vai2 when vai1 = bit0 else
+      	       vai3 when vai1 = bit1;
+   end architecture structural;
+
 ------------------------------------------------------------------------------

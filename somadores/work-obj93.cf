@@ -1,5 +1,9 @@
 v 4
-file . "aux.vhd" "e341bb9368f6a4a7bafde8c33f1a176000962609" "20190913223722.314":
+file . "tb_csa.vhd" "b03aeddfd374465ede0d8dfe5f47af99a68b9107" "20190916144138.678":
+  entity tb_csa at 8( 450) + 0 on 41;
+  architecture tb of tb_csa at 15( 546) + 0 on 42;
+  configuration cfg_tb at 100( 3146) + 0 on 43;
+file . "aux.vhd" "e341bb9368f6a4a7bafde8c33f1a176000962609" "20190916144138.303":
   entity inv at 22( 952) + 0 on 13;
   architecture comport of inv at 30( 1116) + 0 on 14;
   entity and2 at 41( 1484) + 0 on 15;
@@ -14,6 +18,21 @@ file . "aux.vhd" "e341bb9368f6a4a7bafde8c33f1a176000962609" "20190913223722.314"
   architecture comport of xor2 at 124( 3821) + 0 on 24;
   entity xor3 at 133( 4188) + 0 on 25;
   architecture comport of xor3 at 141( 4363) + 0 on 26;
-file . "packageWires.vhd" "787df55833369c3356d0a0ae4bcc9d8afdc0d386" "20190913223722.265":
+file . "packageWires.vhd" "787df55833369c3356d0a0ae4bcc9d8afdc0d386" "20190916144138.263":
   package p_wires at 5( 229) + 0 on 11 body;
   package body p_wires at 48( 1990) + 0 on 12;
+file . "somador.vhd" "9c75c1e65f8b4cc8261eaca531eb1dbf1fc26f79" "20190916144138.362":
+  entity addbit at 9( 421) + 0 on 27;
+  architecture estrutural of addbit at 16( 630) + 0 on 28;
+  entity addercadeia at 47( 1714) + 0 on 29;
+  architecture addercadeia of addercadeia at 57( 1929) + 0 on 30;
+  entity adianta4 at 97( 3691) + 0 on 31;
+  architecture adianta4 of adianta4 at 106( 3939) + 0 on 32;
+  entity adderadianta4 at 145( 5570) + 0 on 33;
+  architecture adderadianta4 of adderadianta4 at 155( 5789) + 0 on 34;
+  entity adianta16 at 217( 8126) + 0 on 35;
+  architecture adianta16 of adianta16 at 226( 8392) + 0 on 36;
+  entity adderadianta16 at 274( 10332) + 0 on 37;
+  architecture adderadianta16 of adderadianta16 at 284( 10666) + 0 on 38;
+  entity addercsa32 at 346( 13134) + 0 on 39;
+  architecture structural of addercsa32 at 414( 15110) + 1 on 40;
