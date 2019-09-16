@@ -302,35 +302,30 @@ architecture adderAdianta16 of adderAdianta16 is
   signal cc : reg4;                     -- cadeia de adiantamento de vai-um
 begin
 
-  U_a15_0:
-    adianta16 port map (inpA,inpB,vem,cc); 
+  U_a15_0: adianta16 port map (inpA,inpB,vem,cc); 
   
-  U_a3_0: adianta4 port map
-    (inpA(3 downto 0),inpB(3 downto 0),vem,c(3 downto 0)); 
+  U_a3_0: adianta4 port map (inpA(3 downto 0),inpB(3 downto 0),vem,c(3 downto 0)); 
 
   U_b0: addBit port map ( inpA(0),inpB(0),vem, r(0),v(0) );
   U_b1: addBit port map ( inpA(1),inpB(1),c(0),r(1),v(1) );
   U_b2: addBit port map ( inpA(2),inpB(2),c(1),r(2),v(2) );
   U_b3: addBit port map ( inpA(3),inpB(3),c(2),r(3),v(3) );
 
-U_a4_7: adianta4 port map
-  (inpA(7 downto 4),inpB(7 downto 4),cc(0),c(7 downto 4));
+U_a4_7: adianta4 port map (inpA(7 downto 4),inpB(7 downto 4),cc(0),c(7 downto 4));
 
   U_b4: addBit port map ( inpA(4),inpB(4),cc(0),r(4),v(4) );
   U_b5: addBit port map ( inpA(5),inpB(5), c(4),r(5),v(5) );
   U_b6: addBit port map ( inpA(6),inpB(6), c(5),r(6),v(6) );
   U_b7: addBit port map ( inpA(7),inpB(7), c(6),r(7),v(7) );
 
-U_a8_11: adianta4 port map
-  (inpA(11 downto 8),inpB(11 downto 8),cc(1),c(11 downto 8)); 
+U_a8_11: adianta4 port map (inpA(11 downto 8),inpB(11 downto 8),cc(1),c(11 downto 8)); 
 
   U_b8: addBit port map ( inpA(8), inpB(8), cc(1), r(8), v(8) );
   U_b9: addBit port map ( inpA(9), inpB(9),  c(8), r(9), v(9) );
   U_ba: addBit port map ( inpA(10),inpB(10), c(9),r(10),v(10) );
   U_bb: addBit port map ( inpA(11),inpB(11),c(10),r(11),v(11) );
 
-U_a12_15: adianta4 port map
-  (inpA(15 downto 12),inpB(15 downto 12),cc(2),c(15 downto 12)); 
+U_a12_15: adianta4 port map (inpA(15 downto 12),inpB(15 downto 12),cc(2),c(15 downto 12)); 
 
   U_bc: addBit port map ( inpA(12),inpB(12),cc(2),r(12),v(12) );
   U_bd: addBit port map ( inpA(13),inpB(13),c(12),r(13),v(13) );
@@ -429,7 +424,7 @@ begin
 
 -- SEU MODELO VAI AQUI
 	
-	UaA161: adderAdianta16 port map ( inpA(15 downto 0), inpB(15 downto 0), outC(15 downto 0), vem, vai1 );
+  UaA161: adderAdianta16 port map ( inpA(15 downto 0), inpB(15 downto 0), outC(15 downto 0), vem, vai1 );
 
 	UaA162: adderAdianta16 port map ( inpA(31 downto 16), inpB(31 downto 16), u(15 downto 0), "0", vai2 );
 
