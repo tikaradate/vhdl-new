@@ -437,55 +437,55 @@ begin
 	
 	with vai1 select
 	m(0) <= u(0) when vai1 = "0",
-		v(0) when vai1 = "1"
+	      	v(0) when vai1 = "1"
 	with vai1 select
 	m(1) <= u(1) when vai1 = "0",
-		v(1) when vai1 = "1"
+          v(1) when vai1 = "1"
 	with vai1 select
 	m(2) <= u(2) when vai1 = "0",
-		v(2) when vai1 = "1"
+	      	v(2) when vai1 = "1"
 	with vai1 select
 	m(3) <= u(3) when vai1 = "0",
-		v(3) when vai1 = "1"
+      		v(3) when vai1 = "1"
 	with vai1 select
 	m(4) <= u(4) when vai1 = "0",
-		v(4) when vai1 = "1"
+	      	v(4) when vai1 = "1"
 	with vai1 select
 	m(5) <= u(5) when vai1 = "0",
-		v(5) when vai1 = "1"
+	      	v(5) when vai1 = "1"
 	with vai1 select
 	m(6) <= u(6) when vai1 = "0",
-		v(6) when vai1 = "1"
+	      	v(6) when vai1 = "1"
 	with vai1 select
 	m(7) <= u(7) when vai1 = "0",
-		v(7) when vai1 = "1"
+	      	v(7) when vai1 = "1"
 	with vai1 select
 	m(8) <= u(8) when vai1 = "0",
-		v(8) when vai1 = "1"
+	      	v(8) when vai1 = "1"
 	with vai1 select
 	m(9) <= u(9) when vai1 = "0",
-		v(9) when vai1 = "1"
+	      	v(9) when vai1 = "1"
 	with vai1 select
 	m(10) <= u(10) when vai1 = "0",
-		v(10) when vai1 = "1"
+           v(10) when vai1 = "1"
 	with vai1 select
 	m(11) <= u(11) when vai1 = "0",
-		v(11) when vai1 = "1"
+           v(11) when vai1 = "1"
 	with vai1 select
 	m(12) <= u(12) when vai1 = "0",
-		v(12) when vai1 = "1"
+           v(12) when vai1 = "1"
 	with vai1 select
 	m(13) <= u(13) when vai1 = "0",
-		v(13) when vai1 = "1"
+           v(13) when vai1 = "1"
 	with vai1 select
 	m(14) <= u(14) when vai1 = "0",
-		v(14) when vai1 = "1"
+           v(14) when vai1 = "1"
 	with vai1 select
 	m(15) <= u(15) when vai1 = "0",
-		v(15) when vai1 = "1"
+           v(15) when vai1 = "1"
 	with vai1 select	
 	m(16) <= vai2 when vai1 = "0",
-		vai3 when vai1 = "1"
+	         vai3 when vai1 = "1"
 
 	outC(31 downto 16) <= m(15 downto 0);
 	vai <= m(16);
